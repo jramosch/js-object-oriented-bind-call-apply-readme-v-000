@@ -4,7 +4,8 @@ function greet(customer) {
     console.log(`Hi ${customer}, my name is ${this.name}!`);
 }
 
-greet.call(sally, 'Terry', 'George');
+let newGreet = greet.bind(sally);
 
-greet.apply(sally, ['Terry', 'George']);
+newGreet('Bob');
 
+greet('Bob');
